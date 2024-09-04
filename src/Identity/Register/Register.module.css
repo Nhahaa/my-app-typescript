@@ -1,0 +1,10 @@
+.Register {
+    background-color: aqua;
+}
+ 
+.CenterDiv {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
