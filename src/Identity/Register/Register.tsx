@@ -1,16 +1,18 @@
-import { FC, ReactElement, ReactNode, ReactPortal, useState } from 'react';
+import { FC, ReactElement, ReactNode, useState } from 'react';
 import styles from './Register.module.css';
 
-import { RegisterData } from "../../Models/registerdata";
+// import { LoginData } from '../../Models/logindata';
+
 
 interface RegisterProps {};
- 
+
 const Register: FC<RegisterProps> = () => {
- 
+
     return (
         <>
+        
         </>
     );
 }
- 
+
 export default Register;
