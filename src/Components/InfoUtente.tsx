@@ -3,11 +3,16 @@ import styles from './InfoUtente.module.css';
 import axios from 'axios';
 import { error } from 'console';
 
+import {UserData} from '../Models/userdata';
 
 interface InfoUtenteProps {};
  
 const InfoUtente: FC<InfoUtenteProps> = () => {
+
+    const [userInfo, setInfoUser] = useState<UserData>();
     
+    //const [userInfoArr[], setInfoUserArr] = useState<UserData[]>([]);
+
     useEffect(() => {
 
         //declare the data fetching function
@@ -33,13 +38,29 @@ const InfoUtente: FC<InfoUtenteProps> = () => {
                     console.log(response.data);
                     console.log(response.status);
 
+                    setInfoUser(response.data);
+
+                   /*  const deserialized_data = response.data;
                     
                     console.log("User ID: " + response.data.id);
                     console.log("Name: " + response.data.name);
                     console.log("UserName: " + response.data.username);
                     console.log("Mail: " + response.data.email);
- 
                     console.log("Company: " + response.data.company.name);
+
+                    const serialized_data = JSON.stringify(deserialized_data);
+                    console.log("JSON.stringify(deserialized_data): " + serialized_data );
+
+                    debugger;
+                    const infoUtente = JSON.parse(serialized_data);
+                    console.log("JSON.parse(serialized_data): " + infoUtente);
+
+                    console.log("User ID: " + infoUtente.id);
+                    console.log("Name: " + infoUtente.name);
+                    console.log("UserName: " + infoUtente.username);
+                    console.log("Mail: " + infoUtente.email);
+                    console.log("Company: " + infoUtente.company.name); */
+
                 }
             })
 
@@ -59,7 +80,9 @@ const InfoUtente: FC<InfoUtenteProps> = () => {
     
     return (
         <>
-        InfoUtente
+        NomeUtente: {userInfo?.name} 
+        <br />
+        Username:{userInfo?.username}
         </>
     );
 }
